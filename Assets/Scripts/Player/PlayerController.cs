@@ -9,6 +9,7 @@ namespace Player
     [RequireComponent (typeof(CapsuleCollider2D))]
     [RequireComponent(typeof(MovementHandler))]
     [RequireComponent(typeof(InteractionHandler))]
+    [RequireComponent(typeof(CollisionHandler))]
 
     public class PlayerController : MonoBehaviour
     {
@@ -28,6 +29,7 @@ namespace Player
         [SerializeField] private MovementHandler _movementHandler;
         [SerializeField] private InteractionHandler _interactionHandler;
         public GameObject currentInteractingObject { get; private set; }
+        public GameObject currentGrabbedObject { get; private set; }
 
         public void MovePlayer(Vector3 movementPosition)
         {
@@ -37,6 +39,11 @@ namespace Player
         public void SetCurrentInteractingObject(GameObject currentObject)
         {
             currentInteractingObject = currentObject;
+        }
+
+        public void SetCurrentGrabbedObject(GameObject currentObject)
+        {
+            currentGrabbedObject = currentObject;
         }
 
         public void EnablePlayerInteraction()

@@ -15,6 +15,16 @@ namespace Player {
         public void MovePlayer(Vector3 movement, float speed)
         {
             rb.transform.position += movement * speed;
+            //Flip transform based on movement direction
+            if (movement.x > 0)
+            {
+                transform.transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (movement.x < 0)
+            {
+                transform.transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
+    
 }

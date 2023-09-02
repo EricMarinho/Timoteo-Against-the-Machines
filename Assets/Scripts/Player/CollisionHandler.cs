@@ -9,7 +9,7 @@ namespace Player
     {
         private PlayerController playerControllerInstance;
 
-        private void Awake()
+        private void Start()
         {
             playerControllerInstance = PlayerController.Instance;
         }

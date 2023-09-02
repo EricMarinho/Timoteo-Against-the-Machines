@@ -9,9 +9,14 @@ namespace Player
     {
         private PlayerController playerControllerInstance;
 
+        private void Start()
+        {
+            playerControllerInstance = PlayerController.Instance;
+        }
+
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerControllerInstance.currentInteractingObject.GetComponent<IInteractable>().Interact();
             }
