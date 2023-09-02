@@ -9,6 +9,8 @@ namespace Interaction
         [SerializeField] private StageData stageData;
         private float activationTime;
         private float activateTimer;
+        private int currentActivatedObjectIndex;
+        private int currentRandomIndex;
 
         private void Start()
         {
@@ -28,8 +30,18 @@ namespace Interaction
             {
                 activateTimer = 0;
                 GetRandomActivationTime();
-                interactableActivationHandlers[Random.Range(0, interactableActivationHandlers.Length)].ActivateObject();
+               
+                interactableActivationHandlers[GetRandomObjectToActivate()].ActivateObject();
             }
+        }
+
+        private int GetRandomObjectToActivate()
+        {
+            while(currentRandomIndex == currentActivatedObjectIndex)
+                currentRandomIndex = Random.Range(0, interactableActivationHandlers.Length);
+
+            currentActivatedObjectIndex = currentRandomIndex;
+            return currentRandomIndex;
         }
 
     }
