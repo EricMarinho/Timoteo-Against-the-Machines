@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720400b82f7d24b3a8b95dd221ca9be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  _data: {fileID: 11400000, guid: 80bc6e286cb384e44ae198a274991eb8, type: 2}
   fill: {fileID: 6983363494405023390}
   fullHealth: {r: 0.44705883, g: 1, b: 0, a: 1}
   middleHealth: {r: 0.9137255, g: 0.50980395, b: 0.047058824, a: 1}

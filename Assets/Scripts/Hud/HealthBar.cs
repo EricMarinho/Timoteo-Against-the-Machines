@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Player;
 
 namespace Hub {
     [RequireComponent(typeof(Slider))]
     public class HealthBar : MonoBehaviour
     {   
-        [SerializeField] private float maxHealth = 3f;
+        public static HealthBar instance;
+        [SerializeField] private PlayerData _data;
+        private float maxHealth = 3f;
         [Header("Fill Configuration")]
         [SerializeField] private Image fill;
         [SerializeField] private Color fullHealth;
@@ -15,20 +18,26 @@ namespace Hub {
         [SerializeField] private Color lowHealth;
         private float health;
         private Slider slider;
+
+        void Awake()
+        {
+            if (instance == null) {
+                instance = this;
+            } else {
+                Destroy(gameObject);
+            }
+        }
+
         void Start()
         {
+            maxHealth = _data.maxSanity;
+            Debug.Log(_data.maxSanity);
             health = maxHealth;
             slider = GetComponent<Slider>();
             slider.maxValue = maxHealth;
             slider.wholeNumbers = true;
             slider.value = health;
             fill.color = fullHealth;
-        }
-
-        void Update () {
-            if(Input.GetKeyDown(KeyCode.Space)) {
-                HeathDamage(1f);
-            }
         }
 
         Color ChangeColor(float health) {

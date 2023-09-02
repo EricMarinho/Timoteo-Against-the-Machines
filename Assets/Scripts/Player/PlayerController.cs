@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hub;
 
 namespace Player
 {
@@ -73,6 +74,7 @@ namespace Player
         public void LoseSanity()
         {
             currentSanity -= 1;
+            HealthBar.instance.HeathDamage(1f);
             TookDamage?.Invoke();
             Debug.Log("Current Sanity: " + currentSanity);
             if(currentSanity <= 0)
