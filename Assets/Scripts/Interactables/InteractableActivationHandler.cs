@@ -23,6 +23,7 @@ namespace Interaction
         {
             interactableHandler.SetActive();
             objectsSanityDamageHandler.enabled = true;
+            Debug.Log("Activated " + gameObject.name);
         }
 
     }

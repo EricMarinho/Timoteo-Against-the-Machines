@@ -21,6 +21,7 @@ namespace Objects
         {
             interactableHandler = GetComponent<InteractableHandler>();
             PlayerController.Instance.TookDamage += ResetSanityTimer;
+            damageTimer = timeToDamage;
         }
 
         private void Update()
