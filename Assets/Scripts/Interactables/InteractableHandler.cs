@@ -1,3 +1,4 @@
+using Audio;
 using Objects;
 using Player;
 using System.Collections;
@@ -14,6 +15,8 @@ namespace Interaction
     {
         [SerializeField] private GameObject requiredObject = null;
         [SerializeField] private Transform pileToReturn;
+        [SerializeField] private AudioClip activationSound;
+        [SerializeField] private AudioClip deactivationSound;
         public bool isActive /*{ get; private set; }*/ = false; // Serialized for testing purpose
         private ObjectsSanityDamageHandler damageHandler;
 
@@ -41,6 +44,7 @@ namespace Interaction
                 Debug.Log("Released " + requiredObject.name);
             }
 
+            AudioPlayerHandler.Instance.PlayDeactivateSound(deactivationSound);
             isActive = false;
             damageHandler.ResetSanityTimer();        
             
@@ -48,6 +52,7 @@ namespace Interaction
 
         public void SetActive()
         {
+            AudioPlayerHandler.Instance.PlayActivateSound(activationSound);
             isActive = true;
         }
 

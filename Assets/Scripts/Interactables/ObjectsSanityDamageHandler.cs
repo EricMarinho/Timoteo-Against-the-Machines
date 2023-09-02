@@ -1,3 +1,4 @@
+using Audio;
 using Interaction;
 using Player;
 using System;
@@ -12,6 +13,7 @@ namespace Objects
     public class ObjectsSanityDamageHandler : MonoBehaviour
     {
         [SerializeField] private int timeToDamage;
+        [SerializeField] private AudioClip loseSanityAudioClip;
         private int damageTimer;
         private float secondsTimer;
 
@@ -20,7 +22,6 @@ namespace Objects
         private void Start()
         {
             interactableHandler = GetComponent<InteractableHandler>();
-            PlayerController.Instance.TookDamage += ResetSanityTimer;
             damageTimer = timeToDamage;
         }
 
@@ -33,6 +34,7 @@ namespace Objects
                 damageTimer -= 1;
                 if(damageTimer <= 0) {
                     ResetSanityTimer();
+                    AudioPlayerHandler.Instance.PlayLoseSanitySound(loseSanityAudioClip);
                     PlayerController.Instance.LoseSanity();
                 }
             }

@@ -1,3 +1,4 @@
+using Audio;
 using Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Interaction
         [SerializeField] private string collectableName;
         [SerializeField] private GameObject grabbedObject;
         [SerializeField] private Transform pileToReturn;
+        [SerializeField] private AudioClip collectObjectAudioClip;
         private PlayerController playerControllerInstance;
 
         private void Start()
@@ -29,6 +31,7 @@ namespace Interaction
             }
             grabbedObject.transform.SetParent(PlayerController.Instance.transform, false);
             grabbedObject.SetActive(true);
+            AudioPlayerHandler.Instance.PlayCollectSound(collectObjectAudioClip);
             PlayerController.Instance.SetCurrentGrabbedObject(grabbedObject);
         }
     }
