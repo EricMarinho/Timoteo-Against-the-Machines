@@ -391,7 +391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredObject: {fileID: 0}
   pileToReturn: {fileID: 1567889241078398673}
-  activationSound: {fileID: 0}
+  activationSound: {fileID: 8300000, guid: 2174030a67b183848ac86945f48aee34, type: 3}
+  deactivationSound: {fileID: 0}
   isActive: 0
 --- !u!114 &517728055951211553
 MonoBehaviour:
@@ -546,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 3877973022759449347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.226, y: 2.089, z: 0}
+  m_LocalPosition: {x: -7.34, y: 2.01, z: 0}
   m_LocalScale: {x: 0.16648673, y: 0.16648673, z: 0.16648673}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -567,6 +568,7 @@ MonoBehaviour:
   requiredObject: {fileID: 1047220414049205338}
   pileToReturn: {fileID: 1567889241078398673}
   activationSound: {fileID: 0}
+  deactivationSound: {fileID: 0}
   isActive: 0
 --- !u!212 &5441140156419488489
 SpriteRenderer:
@@ -652,7 +654,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.2749777, y: -1.5010829}
+  m_Offset: {x: -1.6386538, y: -1.1267741}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -663,7 +665,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.281639, y: 13.454627}
+  m_Size: {x: 16.554285, y: 14.203245}
   m_EdgeRadius: 0
 --- !u!114 &8316253062673764591
 MonoBehaviour:
@@ -1157,6 +1159,7 @@ MonoBehaviour:
   collectableName: RemoteController
   grabbedObject: {fileID: 6829964620634108816}
   pileToReturn: {fileID: 1567889241078398673}
+  collectObjectAudioClip: {fileID: 0}
 --- !u!212 &8406612855885274653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1295,6 +1298,7 @@ MonoBehaviour:
   requiredObject: {fileID: 6829964620634108816}
   pileToReturn: {fileID: 1567889241078398673}
   activationSound: {fileID: 0}
+  deactivationSound: {fileID: 0}
   isActive: 0
 --- !u!114 &7751282625419838967
 MonoBehaviour:
@@ -1571,6 +1575,10 @@ PrefabInstance:
       propertyPath: requiredObject
       value: 
       objectReference: {fileID: 2190529969363618863}
+    - target: {fileID: 8701193397436583571, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: activationSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b10e7de228b188f4f94584195e0e9931, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1701,9 +1709,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4148697252041526348, guid: 8499bb30cfb155a4298bb111927141df, type: 3}
+      propertyPath: m_Size.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148697252041526348, guid: 8499bb30cfb155a4298bb111927141df, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148697252041526348, guid: 8499bb30cfb155a4298bb111927141df, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 548b84f947a6f58468e85ceb8e9fc4c2, type: 3}
+      objectReference: {fileID: 21300000, guid: 1a74ca311451193469395462e4ab0553, type: 3}
     - target: {fileID: 4148697252041526348, guid: 8499bb30cfb155a4298bb111927141df, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1938,6 +1954,14 @@ PrefabInstance:
       value: -0.6257074
       objectReference: {fileID: 0}
     - target: {fileID: 4293737025690311472, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293737025690311472, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293737025690311472, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 4.8
       objectReference: {fileID: 0}
@@ -2029,10 +2053,22 @@ PrefabInstance:
       propertyPath: grabbedObject
       value: 
       objectReference: {fileID: 2190529969363618863}
+    - target: {fileID: 6172786518505763826, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: collectObjectAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a24a068f829e6b40bde0a78f4c6a4e2, type: 3}
+    - target: {fileID: 6181740080082569062, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: m_Size.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181740080082569062, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: m_Size.y
+      value: 4.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6181740080082569062, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 548b84f947a6f58468e85ceb8e9fc4c2, type: 3}
+      objectReference: {fileID: 21300000, guid: 1a74ca311451193469395462e4ab0553, type: 3}
     - target: {fileID: 6181740080082569062, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
       propertyPath: m_Color.b
       value: 1
