@@ -28,7 +28,12 @@ namespace Player
         [SerializeField] private PlayerData _data;
         [SerializeField] private MovementHandler _movementHandler;
         [SerializeField] private InteractionHandler _interactionHandler;
+
+        public int currentSanity { get; private set; }
+
+        [HideInInspector]
         public GameObject currentInteractingObject { get; private set; }
+        [HideInInspector]
         public GameObject currentGrabbedObject { get; private set; }
 
         public void MovePlayer(Vector3 movementPosition)
@@ -54,6 +59,11 @@ namespace Player
         public void DisablePlayerInteraction()
         {
             _interactionHandler.enabled = false;
+        }
+
+        public void LoseSanity()
+        {
+
         }
     }
 }

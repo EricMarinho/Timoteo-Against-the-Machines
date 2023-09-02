@@ -18,6 +18,7 @@ namespace Objects
 
             if (turnTimer >= turnTime)
             {
+                turnDirection *= -1;
                 turnTimer = 0f;
             }
         }
