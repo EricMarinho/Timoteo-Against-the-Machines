@@ -38,6 +38,7 @@ namespace Player
         [HideInInspector]
         public GameObject currentGrabbedObject { get; private set; }
         public Action GameOverEvent;
+        public Action TookDamage;
 
         private void Start()
         {
@@ -72,6 +73,7 @@ namespace Player
         public void LoseSanity()
         {
             currentSanity -= 1;
+            TookDamage?.Invoke();
             Debug.Log("Current Sanity: " + currentSanity);
             if(currentSanity <= 0)
             {
