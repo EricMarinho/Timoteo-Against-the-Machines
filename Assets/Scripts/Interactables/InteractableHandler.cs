@@ -12,7 +12,7 @@ namespace Interaction
     {
         [SerializeField] private GameObject requiredObject;
         [SerializeField] private Transform pileToReturn;
-        [SerializeReference] private bool isActive = false;
+        [SerializeField] private bool isActive = false; // Serialized for testing purpose
 
         public void Interact()
         {
