@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ namespace Player
 {
 
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent (typeof(CapsuleCollider2D))]
+    [RequireComponent (typeof(BoxCollider2D))]
     [RequireComponent(typeof(MovementHandler))]
+    [RequireComponent(typeof(MovementInputController))]
     [RequireComponent(typeof(InteractionHandler))]
     [RequireComponent(typeof(CollisionHandler))]
 
@@ -35,6 +37,12 @@ namespace Player
         public GameObject currentInteractingObject { get; private set; }
         [HideInInspector]
         public GameObject currentGrabbedObject { get; private set; }
+        public Action GameOverEvent;
+
+        private void Start()
+        {
+            currentSanity = _data.maxSanity;
+        }
 
         public void MovePlayer(Vector3 movementPosition)
         {
@@ -63,7 +71,11 @@ namespace Player
 
         public void LoseSanity()
         {
-
+            currentSanity -= 1;
+            if(currentSanity <= 0)
+            {
+                GameOverEvent?.Invoke();
+            }
         }
     }
 }

@@ -14,6 +14,11 @@ namespace Player{
         {
             _horizontal = Input.GetAxis("Horizontal");
             _vertical = Input.GetAxis("Vertical");
+
+            if (Input.GetKey(KeyCode.LeftShift)) { 
+                PlayerController.Instance.LoseSanity();
+            }
+
         }
 
         private void FixedUpdate()

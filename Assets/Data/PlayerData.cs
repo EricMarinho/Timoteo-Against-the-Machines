@@ -8,5 +8,6 @@ namespace Player
     public class PlayerData : ScriptableObject
     {
         public float speed;
+        public int maxSanity;
     }
 }
