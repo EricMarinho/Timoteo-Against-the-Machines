@@ -209,8 +209,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 157227512}
+  - component: {fileID: 157227513}
   m_Layer: 0
-  m_Name: Object Activation Manager
+  m_Name: ObjectActivationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,6 +232,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2136590817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157227513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157227511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322860f62db67bd4890a0ab203a0ece0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableActivationParent: {fileID: 291849883}
+  stageData: {fileID: 11400000, guid: bded2e7edbdd32e45b71d96369f3687c, type: 2}
 --- !u!1 &291551872
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291551873}
   m_Layer: 0
-  m_Name: Collectables
+  m_Name: ---- CollectablePiles ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291849884}
   m_Layer: 0
-  m_Name: Interactables
+  m_Name: ---- Interactables ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,6 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 923971524}
   - component: {fileID: 923971525}
+  - component: {fileID: 923971527}
   - component: {fileID: 923971526}
   - component: {fileID: 923971523}
   - component: {fileID: 923971522}
@@ -541,6 +557,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 3
+--- !u!114 &923971527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923971521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1dc631e237f64f8de4452ff145dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037985734
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,12 +671,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1134990628}
   - component: {fileID: 1134990631}
+  - component: {fileID: 1134990634}
   - component: {fileID: 1134990633}
   - component: {fileID: 1134990632}
   - component: {fileID: 1134990630}
   - component: {fileID: 1134990629}
   m_Layer: 0
-  m_Name: Vacuum Cleaner
+  m_Name: VacuumCleaner
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,6 +838,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 3
+--- !u!114 &1134990634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134990627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1dc631e237f64f8de4452ff145dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406864228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1902047761}
   m_Layer: 0
-  m_Name: Collectables
+  m_Name: ---- Collectables ----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1186,7 @@ GameObject:
   - component: {fileID: 1986764687}
   - component: {fileID: 1986764688}
   m_Layer: 0
-  m_Name: Game Over Manager
+  m_Name: GameOverManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,7 +1407,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1037985737}
   - {fileID: 1489178277136242959}
-  - {fileID: 1902047761}
   - {fileID: 291849884}
   - {fileID: 291551873}
+  - {fileID: 1902047761}
   - {fileID: 2136590817}

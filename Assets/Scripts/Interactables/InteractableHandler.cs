@@ -9,11 +9,18 @@ namespace Interaction
 {
     [RequireComponent(typeof(BoxCollider2D))]
     [RequireComponent(typeof(ObjectsSanityDamageHandler))]
+    [RequireComponent(typeof(InteractableActivationHandler))]
     public class InteractableHandler : MonoBehaviour, IInteractable
     {
         [SerializeField] private GameObject requiredObject;
         [SerializeField] private Transform pileToReturn;
-        [SerializeField] private bool isActive = false; // Serialized for testing purpose
+        public bool isActive /*{ get; private set; }*/ = false; // Serialized for testing purpose
+        private ObjectsSanityDamageHandler damageHandler;
+
+        private void Start()
+        {
+            damageHandler = GetComponent<ObjectsSanityDamageHandler>();
+        }
 
         public void Interact()
         {
@@ -26,9 +33,20 @@ namespace Interaction
 
             Debug.Log("Released " + requiredObject.name);
             isActive = false;
+            damageHandler.ResetSanityTimer();
             requiredObject.transform.SetParent(pileToReturn, false);
             PlayerController.Instance.SetCurrentGrabbedObject(null);
             requiredObject.SetActive(false);
+        }
+
+        public void SetActive()
+        {
+            isActive = true;
+        }
+
+        public void SetInactive()
+        {
+            isActive = false;
         }
     }
 }

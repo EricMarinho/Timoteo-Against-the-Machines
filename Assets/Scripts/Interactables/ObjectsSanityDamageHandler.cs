@@ -1,3 +1,4 @@
+using Interaction;
 using Player;
 using System;
 using System.Collections;
@@ -7,27 +8,41 @@ using UnityEngine;
 
 namespace Objects
 {
+    [RequireComponent(typeof(InteractableHandler))]
     public class ObjectsSanityDamageHandler : MonoBehaviour
     {
         [SerializeField] private int timeToDamage;
         private int damageTimer;
         private float secondsTimer;
 
+        private InteractableHandler interactableHandler;
+
+        private void Start()
+        {
+            interactableHandler = GetComponent<InteractableHandler>();
+            PlayerController.Instance.TookDamage += ResetSanityTimer;
+        }
+
         private void Update()
         {
             secondsTimer += Time.deltaTime;
-            if (secondsTimer >= 1)
+            if (secondsTimer >= 1f)
             {
-                secondsTimer = 0;
+                secondsTimer = 0f;
                 damageTimer -= 1;
-                if(damageTimer < 1) {
-                    secondsTimer = 0;
-                    damageTimer = timeToDamage;
+                if(damageTimer <= 0) {
+                    ResetSanityTimer();
                     PlayerController.Instance.LoseSanity();
-                    enabled = false;
                 }
             }
         }
 
+        public void ResetSanityTimer()
+        {
+            secondsTimer = 0f;
+            damageTimer = timeToDamage;
+            enabled = false;
+            interactableHandler.SetInactive();
+        }
     }
 }
