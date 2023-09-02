@@ -12,7 +12,7 @@ namespace Interaction
     [RequireComponent(typeof(InteractableActivationHandler))]
     public class InteractableHandler : MonoBehaviour, IInteractable
     {
-        [SerializeField] private GameObject requiredObject;
+        [SerializeField] private GameObject requiredObject = null;
         [SerializeField] private Transform pileToReturn;
         public bool isActive /*{ get; private set; }*/ = false; // Serialized for testing purpose
         private ObjectsSanityDamageHandler damageHandler;
@@ -24,19 +24,26 @@ namespace Interaction
 
         public void Interact()
         {
-            if (PlayerController.Instance.currentGrabbedObject == null || !isActive) return;
+            if (!isActive) return;
 
-            if(PlayerController.Instance.currentGrabbedObject != requiredObject) { 
-                Debug.Log("Not the required object");
-                return;
+            if (requiredObject != null)
+            {
+                if (PlayerController.Instance.currentGrabbedObject == null) return;
+
+                if (PlayerController.Instance.currentGrabbedObject != requiredObject)
+                {
+                    Debug.Log("Not the required object");
+                    return;
+                }
+                requiredObject.transform.SetParent(pileToReturn, false);
+                requiredObject.SetActive(false);
+                PlayerController.Instance.SetCurrentGrabbedObject(null);
+                Debug.Log("Released " + requiredObject.name);
             }
 
-            Debug.Log("Released " + requiredObject.name);
             isActive = false;
-            damageHandler.ResetSanityTimer();
-            requiredObject.transform.SetParent(pileToReturn, false);
-            PlayerController.Instance.SetCurrentGrabbedObject(null);
-            requiredObject.SetActive(false);
+            damageHandler.ResetSanityTimer();        
+            
         }
 
         public void SetActive()
