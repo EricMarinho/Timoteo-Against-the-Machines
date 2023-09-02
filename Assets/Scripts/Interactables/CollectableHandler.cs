@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace Interaction
 {
-    [RequireComponent(typeof(BoxCollider2D))]
     public class CollectableHandler : MonoBehaviour, IInteractable
     {
         [SerializeField] private string collectableName;
