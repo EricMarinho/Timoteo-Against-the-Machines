@@ -72,6 +72,7 @@ namespace Player
         public void LoseSanity()
         {
             currentSanity -= 1;
+            Debug.Log("Current Sanity: " + currentSanity);
             if(currentSanity <= 0)
             {
                 GameOverEvent?.Invoke();

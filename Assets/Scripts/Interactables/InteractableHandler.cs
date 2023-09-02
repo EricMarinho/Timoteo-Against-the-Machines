@@ -12,11 +12,12 @@ namespace Interaction
     {
         [SerializeField] private GameObject requiredObject;
         [SerializeField] private Transform pileToReturn;
+        [SerializeReference] private bool isActive = false;
 
         public void Interact()
         {
             
-            if (PlayerController.Instance.currentGrabbedObject == null) return;
+            if (PlayerController.Instance.currentGrabbedObject == null || !isActive) return;
 
             if(PlayerController.Instance.currentGrabbedObject != requiredObject) { 
                 Debug.Log("Not the required object");
