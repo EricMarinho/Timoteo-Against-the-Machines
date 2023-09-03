@@ -3586,10 +3586,6 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1006727774}
-    - target: {fileID: 6565738943689545539, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
-      propertyPath: deactivationSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9b08f90c9b0721b40bb57876a310d6e1, type: 3}
     - target: {fileID: 7751282625419838967, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
       propertyPath: timerText
       value: 

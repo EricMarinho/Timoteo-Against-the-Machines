@@ -78,7 +78,7 @@ namespace Player
         public void LoseSanity()
         {
             currentSanity -= 1;
-            HealthBar.instance.HeathDamage(1f);
+            HealthBar.instance.SanityDamage(1f);
             TookDamage?.Invoke();
             Debug.Log("Current Sanity: " + currentSanity);
             if(currentSanity <= 0)

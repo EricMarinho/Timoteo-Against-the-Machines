@@ -82,16 +82,16 @@ namespace Hub {
             return currentPercentage >= 70f ? fullHealth : currentPercentage >= 66f ? middleHealth : lowHealth;
         }
 
-        Sprite ChangeSpriteBran(float health) {
+        Sprite ChangeSpriteBrain(float health) {
             var currentPercentage = (health*100) / maxHealth;
-            return currentPercentage >= 66f ? fullBrain : currentPercentage >= 33f ? middleBrain : lowBrain;
+            return currentPercentage >= 70f ? fullBrain : currentPercentage >= 40f ? middleBrain : lowBrain;
         }
 
-        public void HeathDamage(float damage) {
+        public void SanityDamage(float damage) {
             health = Mathf.Clamp(health - damage, 0, maxHealth);
             slider.value = health;
             fill.color = ChangeColor(health);
-            brain.sprite = ChangeSpriteBran(health);
+            brain.sprite = ChangeSpriteBrain(health);
             Shake();
         }
     }
