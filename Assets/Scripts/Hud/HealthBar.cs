@@ -16,6 +16,17 @@ namespace Hub {
         [SerializeField] private Color fullHealth;
         [SerializeField] private Color middleHealth;
         [SerializeField] private Color lowHealth;
+        [Header("Brain Configuration")]
+        [SerializeField] private Image brain;
+        [SerializeField] private Sprite fullBrain;
+        [SerializeField] private Sprite middleBrain;
+        [SerializeField] private Sprite lowBrain;
+        [Header("Effect Camera Shake Configuration")]
+        [SerializeField] private float shakeDuration = 0.5f;
+	    [SerializeField] private float shakeIntensity = 0.1f;
+        private float currentShakeDuration = 0f;
+        private Camera mainCamera;
+        private Vector3 originalPosition;
         private float health;
         private Slider slider;
 
@@ -38,17 +49,44 @@ namespace Hub {
             slider.wholeNumbers = true;
             slider.value = health;
             fill.color = fullHealth;
+            brain.sprite = fullBrain;
+            mainCamera = Camera.main;
+            originalPosition = mainCamera.transform.localPosition;
+        }
+
+        void Update() {
+            if (currentShakeDuration > 0)
+            {
+                mainCamera.transform.localPosition = originalPosition + Random.insideUnitSphere * shakeIntensity;
+                currentShakeDuration -= Time.deltaTime;
+            }
+            else
+            {
+                currentShakeDuration = 0f;
+                mainCamera.transform.localPosition = originalPosition;
+            }
+        }
+        void Shake()
+        {
+            currentShakeDuration = shakeDuration;
         }
 
         Color ChangeColor(float health) {
             var currentPercentage = (health*100) / maxHealth;
-            return currentPercentage >= 66f ? fullHealth : currentPercentage >= 33f ? middleHealth : lowHealth;
+            return currentPercentage >= 70f ? fullHealth : currentPercentage >= 66f ? middleHealth : lowHealth;
+        }
+
+        Sprite ChangeSpriteBran(float health) {
+            var currentPercentage = (health*100) / maxHealth;
+            return currentPercentage >= 66f ? fullBrain : currentPercentage >= 33f ? middleBrain : lowBrain;
         }
 
         public void HeathDamage(float damage) {
             health = Mathf.Clamp(health - damage, 0, maxHealth);
             slider.value = health;
             fill.color = ChangeColor(health);
+            brain.sprite = ChangeSpriteBran(health);
+            Shake();
         }
     }
 }
