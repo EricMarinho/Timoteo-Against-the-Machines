@@ -1231,7 +1231,7 @@ MonoBehaviour:
   collectableName: RemoteController
   grabbedObject: {fileID: 6829964620634108816}
   pileToReturn: {fileID: 1567889241078398673}
-  collectObjectAudioClip: {fileID: 0}
+  collectObjectAudioClip: {fileID: 8300000, guid: 3a24a068f829e6b40bde0a78f4c6a4e2, type: 3}
 --- !u!212 &8406612855885274653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1853,6 +1853,10 @@ PrefabInstance:
       propertyPath: gameOverObject
       value: 
       objectReference: {fileID: 5572113743585831106}
+    - target: {fileID: 1571969746151463373, guid: 17a50157a4c44554495b3200b26ed1f0, type: 3}
+      propertyPath: speedController
+      value: 
+      objectReference: {fileID: 5695809316957674425}
     - target: {fileID: 1927652719418121868, guid: 17a50157a4c44554495b3200b26ed1f0, type: 3}
       propertyPath: m_Name
       value: ---- Managers ----
@@ -2566,6 +2570,10 @@ PrefabInstance:
       propertyPath: collectableName
       value: WaterCup
       objectReference: {fileID: 0}
+    - target: {fileID: 8431277390248258135, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
+      propertyPath: collectObjectAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f35e380dca4580478db2d691989ab35, type: 3}
     - target: {fileID: 9189809512188829135, guid: a79ea31540e252641a01f221b3d382ff, type: 3}
       propertyPath: m_Name
       value: WaterCupPile
