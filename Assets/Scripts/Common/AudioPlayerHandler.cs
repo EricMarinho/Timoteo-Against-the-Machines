@@ -42,5 +42,10 @@ namespace Audio
             loseSanityAudioSource.PlayOneShot(audioClip);
         }
 
+        public void StopActiveSound()
+        {
+            activationAudioSource.Stop();
+        }
+
     }
 }

@@ -1,3 +1,4 @@
+using Audio;
 using Interaction;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +22,11 @@ namespace Objects
 
         void Update()
         {
-            if (!interactableHandler.isActive) return;
+            if (!interactableHandler.isActive)
+            {
+                AudioPlayerHandler.Instance.StopActiveSound();
+                return;
+            }
 
             turnTimer += Time.deltaTime;
             transform.position += new Vector3(moveSpeed * Time.deltaTime * turnDirection, 0f, 0f);
