@@ -13,6 +13,7 @@ namespace Common {
         [SerializeField] private GameSpeedController speedController;
         private bool wasPaused = false;
         private bool wasGameOver = false;
+        private float currentTimeScale = 1f;
 
         void Awake()
         {
@@ -25,10 +26,11 @@ namespace Common {
 
         void Update()
         {
-            if(!wasGameOver && Input.GetKeyDown(KeyCode.Escape)) {
+            if(!wasGameOver && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))) {
                 wasPaused = !wasPaused;
                 speedController.enabled = !wasPaused;
-                Time.timeScale = wasPaused ? 0f : 1f;
+                currentTimeScale = Time.timeScale;
+                Time.timeScale = wasPaused ? 0f : currentTimeScale;
                 containerPause.SetActive(wasPaused);
             }
         }
