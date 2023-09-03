@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!114 &3662161243335890721
 MonoBehaviour:
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredObject: {fileID: 1047220414049205338}
   pileToReturn: {fileID: 1567889241078398673}
-  activationSound: {fileID: 0}
+  activationSound: {fileID: 8300000, guid: 19e66d2e7a92de54c91716212e933b0a, type: 3}
   deactivationSound: {fileID: 0}
   isActive: 0
 --- !u!212 &5441140156419488489
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!114 &5690202284257148011
 MonoBehaviour:
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredObject: {fileID: 6829964620634108816}
   pileToReturn: {fileID: 1567889241078398673}
-  activationSound: {fileID: 0}
+  activationSound: {fileID: 8300000, guid: 8c0920d4143363f46bedbc0b9a29924d, type: 3}
   deactivationSound: {fileID: 8300000, guid: c432c5e7b97c19144889a8289cd0ad50, type: 3}
   isActive: 0
 --- !u!114 &7751282625419838967
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!212 &6130152262348471144
 SpriteRenderer:
@@ -1545,6 +1545,10 @@ PrefabInstance:
       propertyPath: timeToDamage
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1181186345817744432, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: loseSanityAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
     - target: {fileID: 2038470830204059081, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_Name
       value: ---- Interactables ----
@@ -1609,6 +1613,10 @@ PrefabInstance:
       propertyPath: timeToDamage
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4742900851435693180, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: loseSanityAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
     - target: {fileID: 4818038868399725517, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
