@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Hub;
+using Common;
 
 namespace Player
 {
@@ -82,7 +83,8 @@ namespace Player
             Debug.Log("Current Sanity: " + currentSanity);
             if(currentSanity <= 0)
             {
-                GameOverEvent?.Invoke();
+                HealthBar.instance.StopShake();
+                GameManager.instance.GameOver();
             }
         }
     }
