@@ -1,3 +1,4 @@
+using Speed;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Common {
         public static GameManager instance;
         [SerializeField] private GameObject containerPause;
         [SerializeField] private GameObject gameOverObject;
+        [SerializeField] private GameSpeedController speedController;
         private bool wasPaused = false;
 
         void Awake()
@@ -30,6 +32,7 @@ namespace Common {
         }
 
         public void GameOver() {
+            speedController.enabled = false;
             Debug.Log("GAME OVER!!!");
             Time.timeScale = 0;
             gameOverObject.SetActive(true);
