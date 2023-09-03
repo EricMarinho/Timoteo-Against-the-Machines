@@ -26,6 +26,7 @@ namespace Common {
         {
             if(Input.GetKeyDown(KeyCode.Escape)) {
                 wasPaused = !wasPaused;
+                speedController.enabled = !wasPaused;
                 Time.timeScale = wasPaused ? 0f : 1f;
                 containerPause.SetActive(wasPaused);
             }
