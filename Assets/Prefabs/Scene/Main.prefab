@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stageData: {fileID: 11400000, guid: bded2e7edbdd32e45b71d96369f3687c, type: 2}
+  _audioSource: {fileID: 3546792427640472147}
 --- !u!1 &2034899632641502713
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!114 &3662161243335890721
 MonoBehaviour:
@@ -471,7 +472,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24928099, y: 0.011558145}
+  m_Offset: {x: -0.20225364, y: 0.011558175}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -482,7 +483,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.501438, y: 1.5490685}
+  m_Size: {x: 0.5954927, y: 1.5490685}
   m_EdgeRadius: 0
 --- !u!95 &6231406964566081465
 Animator:
@@ -702,8 +703,8 @@ MonoBehaviour:
   interaction: {fileID: 0}
   requiredObject: {fileID: 1047220414049205338}
   pileToReturn: {fileID: 1567889241078398673}
-  activationSound: {fileID: 0}
-  deactivationSound: {fileID: 0}
+  activationSound: {fileID: 8300000, guid: 19e66d2e7a92de54c91716212e933b0a, type: 3}
+  deactivationSound: {fileID: 8300000, guid: 9b08f90c9b0721b40bb57876a310d6e1, type: 3}
   isActive: 0
 --- !u!212 &5441140156419488489
 SpriteRenderer:
@@ -815,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!114 &5690202284257148011
 MonoBehaviour:
@@ -1397,7 +1398,7 @@ MonoBehaviour:
   interaction: {fileID: 0}
   requiredObject: {fileID: 6829964620634108816}
   pileToReturn: {fileID: 1567889241078398673}
-  activationSound: {fileID: 0}
+  activationSound: {fileID: 8300000, guid: 8c0920d4143363f46bedbc0b9a29924d, type: 3}
   deactivationSound: {fileID: 8300000, guid: c432c5e7b97c19144889a8289cd0ad50, type: 3}
   isActive: 0
 --- !u!114 &7751282625419838967
@@ -1426,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDamage: 7
-  loseSanityAudioClip: {fileID: 0}
+  loseSanityAudioClip: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
   timerText: {fileID: 0}
 --- !u!212 &6130152262348471144
 SpriteRenderer:
@@ -1629,6 +1630,10 @@ PrefabInstance:
       propertyPath: timeToDamage
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1181186345817744432, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: loseSanityAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
     - target: {fileID: 2038470830204059081, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_Name
       value: ---- Interactables ----
@@ -1666,9 +1671,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3377899510326692366, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+<<<<<<< HEAD
       propertyPath: interactionButton
       value: 
       objectReference: {fileID: 3266318747069586419}
+=======
+      propertyPath: activationSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 244625e5d1e5dc74e93ddba3321b298a, type: 3}
+    - target: {fileID: 3377899510326692366, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: deactivationSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e32e37fe662d07b4c978e7ce47d24c63, type: 3}
+>>>>>>> 165494be8150cea70c133c422aa8ed5897568d4a
     - target: {fileID: 4098947966921466019, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1693,6 +1708,10 @@ PrefabInstance:
       propertyPath: timeToDamage
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4742900851435693180, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: loseSanityAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a21c67c1f461f846a606f30e479f051, type: 3}
     - target: {fileID: 4818038868399725517, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2977,6 +2996,11 @@ PrefabInstance:
 --- !u!4 &3416578610787317385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619991860425438483, guid: 98341657dbd7ca941824b542e19d895c, type: 3}
+  m_PrefabInstance: {fileID: 8409574693858591642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3546792427640472147 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5011507251416924617, guid: 98341657dbd7ca941824b542e19d895c, type: 3}
   m_PrefabInstance: {fileID: 8409574693858591642}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8855027671473919607

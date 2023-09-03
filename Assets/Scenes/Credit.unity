@@ -403,9 +403,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 238092717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -686, y: -44}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -286, y: -44}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528000968
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Elden Gear
+  m_text: Timoteo Against the Machines
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
   m_sharedMaterial: {fileID: -8523431296157302228, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
@@ -455,8 +455,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -555.0803, w: 0}
+  m_margin: {x: 0, y: 0, z: -572.4257, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -536,6 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerPause: {fileID: 0}
   gameOverObject: {fileID: 0}
+  speedController: {fileID: 0}
 --- !u!4 &529849427
 Transform:
   m_ObjectHideFlags: 0
@@ -977,9 +978,12 @@ MonoBehaviour:
     Felipe Bueno - SFX & QA
 
     Gabriel Caminha - Design
-    & Art revision
+    & Art Revision
 
-    Joao Carlos - Pixel Art'
+    Joao Carlos Henrique Jin - Pixel Art
+
+    Julia Restini -
+    Cover Art'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
   m_sharedMaterial: {fileID: -8523431296157302228, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
