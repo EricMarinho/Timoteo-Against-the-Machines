@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StageData
   m_EditorClassIdentifier: 
   objectActivationTime:
-    min: 4
+    min: 3
     max: 5
-  speedModifier: 0.001
+  speedModifier: 0.003
   speedByDamageModifier: 0.05
