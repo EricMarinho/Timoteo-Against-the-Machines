@@ -13,6 +13,9 @@ namespace Interaction
     [RequireComponent(typeof(InteractableActivationHandler))]
     public class InteractableHandler : MonoBehaviour, IInteractable
     {
+        [SerializeField] private GameObject necessaryItem = null;
+        [SerializeField] private GameObject interactionButton;
+        [SerializeField] private GameObject interaction;
         [SerializeField] private GameObject requiredObject = null;
         [SerializeField] private Transform pileToReturn;
         [SerializeField] private AudioClip activationSound;
@@ -59,6 +62,40 @@ namespace Interaction
         public void SetInactive()
         {
             isActive = false;
+            interactionButton.SetActive(false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                var player = collision.transform;
+                var nameRequiredObject = requiredObject != null ? requiredObject.name : null;
+                var child = nameRequiredObject != null ? player.Find(nameRequiredObject) : null;
+                var nameChild = child != null ? child.name : null;
+                var verificationSameGameObject = requiredObject != null ? nameRequiredObject == nameChild : false;
+                if (isActive) {
+                    if(requiredObject == null || verificationSameGameObject == true) {
+                        interactionButton.SetActive(true);
+                    } else {
+                        necessaryItem.SetActive(true);
+                    }
+                }
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (isActive) {
+                    interactionButton.SetActive(false);
+
+                    if (necessaryItem != null) {
+                        necessaryItem.SetActive(false);
+                    }
+                }
+            }
         }
     }
 }
