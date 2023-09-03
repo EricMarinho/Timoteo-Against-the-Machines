@@ -1589,6 +1589,10 @@ PrefabInstance:
       propertyPath: activationSound
       value: 
       objectReference: {fileID: 8300000, guid: 244625e5d1e5dc74e93ddba3321b298a, type: 3}
+    - target: {fileID: 3377899510326692366, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
+      propertyPath: deactivationSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e32e37fe662d07b4c978e7ce47d24c63, type: 3}
     - target: {fileID: 4098947966921466019, guid: 43135f18f2f543e4a8c40459d14e6564, type: 3}
       propertyPath: m_Sprite
       value: 
