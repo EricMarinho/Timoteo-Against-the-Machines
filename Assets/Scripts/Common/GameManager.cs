@@ -12,6 +12,7 @@ namespace Common {
         [SerializeField] private GameObject gameOverObject;
         [SerializeField] private GameSpeedController speedController;
         private bool wasPaused = false;
+        private bool wasGameOver = false;
 
         void Awake()
         {
@@ -24,7 +25,7 @@ namespace Common {
 
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(!wasGameOver && Input.GetKeyDown(KeyCode.Escape)) {
                 wasPaused = !wasPaused;
                 speedController.enabled = !wasPaused;
                 Time.timeScale = wasPaused ? 0f : 1f;
@@ -33,6 +34,7 @@ namespace Common {
         }
 
         public void GameOver() {
+            wasGameOver = true;
             speedController.enabled = false;
             Debug.Log("GAME OVER!!!");
             Time.timeScale = 0;
