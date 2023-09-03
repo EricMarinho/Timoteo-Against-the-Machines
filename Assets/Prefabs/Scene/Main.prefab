@@ -695,7 +695,7 @@ MonoBehaviour:
   requiredObject: {fileID: 1047220414049205338}
   pileToReturn: {fileID: 1567889241078398673}
   activationSound: {fileID: 8300000, guid: 19e66d2e7a92de54c91716212e933b0a, type: 3}
-  deactivationSound: {fileID: 0}
+  deactivationSound: {fileID: 8300000, guid: 9b08f90c9b0721b40bb57876a310d6e1, type: 3}
   isActive: 0
 --- !u!212 &5441140156419488489
 SpriteRenderer:
