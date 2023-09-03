@@ -57,6 +57,7 @@ namespace Hub {
         void Update() {
             if (currentShakeDuration > 0)
             {
+                Debug.Log("Shake");
                 mainCamera.transform.localPosition = originalPosition + Random.insideUnitSphere * shakeIntensity;
                 currentShakeDuration -= Time.deltaTime;
             }
@@ -69,6 +70,11 @@ namespace Hub {
         void Shake()
         {
             currentShakeDuration = shakeDuration;
+        }
+
+        public void StopShake()
+        {
+            currentShakeDuration = 0f;
         }
 
         Color ChangeColor(float health) {
