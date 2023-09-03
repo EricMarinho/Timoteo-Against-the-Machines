@@ -1,6 +1,7 @@
 using Objects;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Interaction
@@ -10,6 +11,7 @@ namespace Interaction
 
     public class InteractableActivationHandler : MonoBehaviour
     {
+        [SerializeField] private TMP_Text timerText;
         private InteractableHandler interactableHandler;
         private ObjectsSanityDamageHandler objectsSanityDamageHandler;
 
@@ -21,6 +23,7 @@ namespace Interaction
 
         public void ActivateObject()
         {
+            timerText.transform.parent.gameObject.SetActive(true);
             interactableHandler.SetActive();
             objectsSanityDamageHandler.enabled = true;
             Debug.Log("Activated " + gameObject.name);

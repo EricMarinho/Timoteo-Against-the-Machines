@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 namespace Objects
@@ -14,6 +15,7 @@ namespace Objects
     {
         [SerializeField] private int timeToDamage;
         [SerializeField] private AudioClip loseSanityAudioClip;
+        [SerializeField] private TMP_Text timerText;
         private int damageTimer;
         private float secondsTimer;
 
@@ -30,6 +32,7 @@ namespace Objects
             secondsTimer += Time.deltaTime;
             if (secondsTimer >= 1f)
             {
+                timerText.SetText((damageTimer - 1).ToString());
                 secondsTimer = 0f;
                 damageTimer -= 1;
                 if(damageTimer <= 0) {
@@ -42,6 +45,8 @@ namespace Objects
 
         public void ResetSanityTimer()
         {
+            timerText.SetText(timeToDamage.ToString());
+            timerText.transform.parent.gameObject.SetActive(false);
             secondsTimer = 0f;
             damageTimer = timeToDamage;
             enabled = false;

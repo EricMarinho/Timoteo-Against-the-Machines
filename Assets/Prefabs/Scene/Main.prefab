@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de1dc631e237f64f8de4452ff145dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
 --- !u!114 &2306050010629789872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDamage: 7
   loseSanityAudioClip: {fileID: 0}
+  timerText: {fileID: 0}
 --- !u!114 &3662161243335890721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDamage: 7
   loseSanityAudioClip: {fileID: 0}
+  timerText: {fileID: 0}
 --- !u!114 &5690202284257148011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de1dc631e237f64f8de4452ff145dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
 --- !u!95 &5105846216906498533
 Animator:
   serializedVersion: 5
@@ -1349,6 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de1dc631e237f64f8de4452ff145dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
 --- !u!114 &6329751617109774197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDamage: 7
   loseSanityAudioClip: {fileID: 0}
+  timerText: {fileID: 0}
 --- !u!212 &6130152262348471144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1978,6 +1984,10 @@ PrefabInstance:
     - target: {fileID: 4076357518133354136, guid: f0dfbd4c680524cf1a20f93e87da77b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151963266866193397, guid: f0dfbd4c680524cf1a20f93e87da77b0, type: 3}
+      propertyPath: m_text
+      value: Game Over
       objectReference: {fileID: 0}
     - target: {fileID: 6948916151303115118, guid: f0dfbd4c680524cf1a20f93e87da77b0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
