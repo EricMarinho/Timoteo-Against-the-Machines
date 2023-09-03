@@ -215,6 +215,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009361217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009361219}
+  - component: {fileID: 2009361218}
+  m_Layer: 0
+  m_Name: GameSpeedController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009361218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009361217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04d38e42a6db164c86b8b29a3ec1a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageData: {fileID: 11400000, guid: bded2e7edbdd32e45b71d96369f3687c, type: 2}
+--- !u!4 &2009361219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009361217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7309919, y: -0.15004177, z: -0.06475223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1489178277136242959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336,6 +381,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 75da0526a728ff8459c65032bfd10b7d, type: 2}
+    - target: {fileID: 5992255449402001963, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992255449402001963, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570973164074853936, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.97237825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570973164074853936, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.97142863
+      objectReference: {fileID: 0}
     - target: {fileID: 9203385909150109188, guid: a4ff1987e2dae5d4b8fff2638124f0b1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -364,3 +425,4 @@ SceneRoots:
   - {fileID: 1037985737}
   - {fileID: 1489178277136242959}
   - {fileID: 2449873197899005316}
+  - {fileID: 2009361219}

@@ -5,4 +5,5 @@ public class StageData : ScriptableObject
 {
     public MinMax objectActivationTime;
     public float speedModifier;
+    public float speedByDamageModifier;
 }
