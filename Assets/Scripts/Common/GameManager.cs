@@ -38,7 +38,17 @@ namespace Common {
         public void StartGame() {
             Debug.Log("Start Game!!!");
             Time.timeScale = 1;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
+
+        public void Menu() {
+            SceneManager.LoadScene(0);
+        }
+
+        public void Credits() {
+            SceneManager.LoadScene(2);
+        }
+
+        public void QuitGame() => Application.Quit();
     }
 }
