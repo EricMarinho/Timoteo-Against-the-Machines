@@ -15,6 +15,7 @@ namespace Objects
         [SerializeField] private float moveSpeed;
         private float turnTimer = 0f;
         private float turnDirection = 1f;
+        private bool isActive = false;
 
         private void Start()
         {
@@ -26,11 +27,16 @@ namespace Objects
         {
             if (!interactableHandler.isActive)
             {
+                if (!isActive) return;
+                
+                isActive = false;
                 AudioPlayerHandler.Instance.StopActiveSound();
                 animator.SetBool("isActive", false);
                 return;
+                
             }
 
+            isActive = true;
             animator.SetBool("isActive", true);
             turnTimer += Time.deltaTime;
             transform.position += new Vector3(moveSpeed * Time.deltaTime * turnDirection, 0f, 0f);

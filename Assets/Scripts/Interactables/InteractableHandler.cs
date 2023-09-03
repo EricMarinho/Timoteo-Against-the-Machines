@@ -52,7 +52,6 @@ namespace Interaction
 
         public void SetActive()
         {
-            Debug.Log("AAAA");
             isActive = true;
             AudioPlayerHandler.Instance.PlayActivateSound(activationSound);
         }
