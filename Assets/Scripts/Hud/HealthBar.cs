@@ -21,6 +21,12 @@ namespace Hub {
         [SerializeField] private Sprite fullBrain;
         [SerializeField] private Sprite middleBrain;
         [SerializeField] private Sprite lowBrain;
+        [Header("Effect Camera Shake Configuration")]
+        [SerializeField] private float shakeDuration = 0.5f;
+	    [SerializeField] private float shakeIntensity = 0.1f;
+        private float currentShakeDuration = 0f;
+        private Camera mainCamera;
+        private Vector3 originalPosition;
         private float health;
         private Slider slider;
 
@@ -44,6 +50,25 @@ namespace Hub {
             slider.value = health;
             fill.color = fullHealth;
             brain.sprite = fullBrain;
+            mainCamera = Camera.main;
+            originalPosition = mainCamera.transform.localPosition;
+        }
+
+        void Update() {
+            if (currentShakeDuration > 0)
+            {
+                mainCamera.transform.localPosition = originalPosition + Random.insideUnitSphere * shakeIntensity;
+                currentShakeDuration -= Time.deltaTime;
+            }
+            else
+            {
+                currentShakeDuration = 0f;
+                mainCamera.transform.localPosition = originalPosition;
+            }
+        }
+        void Shake()
+        {
+            currentShakeDuration = shakeDuration;
         }
 
         Color ChangeColor(float health) {
@@ -61,6 +86,7 @@ namespace Hub {
             slider.value = health;
             fill.color = ChangeColor(health);
             brain.sprite = ChangeSpriteBran(health);
+            Shake();
         }
     }
 }
