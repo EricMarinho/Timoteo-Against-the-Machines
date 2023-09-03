@@ -9,6 +9,7 @@ namespace Objects
     public class VacuumCleanerController : MonoBehaviour
     {
         private InteractableHandler interactableHandler;
+        private Animator animator;
 
         [SerializeField] private float turnTime;
         [SerializeField] private float moveSpeed;
@@ -18,6 +19,7 @@ namespace Objects
         private void Start()
         {
             interactableHandler = GetComponent<InteractableHandler>();
+            animator = GetComponent<Animator>();
         }
 
         void Update()
@@ -25,9 +27,11 @@ namespace Objects
             if (!interactableHandler.isActive)
             {
                 AudioPlayerHandler.Instance.StopActiveSound();
+                animator.SetBool("isActive", false);
                 return;
             }
 
+            animator.SetBool("isActive", true);
             turnTimer += Time.deltaTime;
             transform.position += new Vector3(moveSpeed * Time.deltaTime * turnDirection, 0f, 0f);
 
