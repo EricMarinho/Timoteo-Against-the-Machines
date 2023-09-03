@@ -31,6 +31,7 @@ namespace Player
         [SerializeField] private PlayerData _data;
         [SerializeField] private MovementHandler _movementHandler;
         [SerializeField] private InteractionHandler _interactionHandler;
+        private Animator animator;
 
         public int currentSanity { get; private set; }
 
@@ -44,10 +45,12 @@ namespace Player
         private void Start()
         {
             currentSanity = _data.maxSanity;
+            animator = GetComponent<Animator>();
         }
 
         public void MovePlayer(Vector3 movementPosition)
         {
+            animator.SetBool("isWalking", Math.Abs(movementPosition.x) + Math.Abs(movementPosition.y ) != 0f);
             _movementHandler.MovePlayer(movementPosition, _data.speed * Time.deltaTime);
         }
 
