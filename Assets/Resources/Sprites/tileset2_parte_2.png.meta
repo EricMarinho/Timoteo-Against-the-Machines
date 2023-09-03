@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f59b871e9178670428352b234279dea1
+guid: 24cb5d566bb73a94db34238d10d93ee1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 112, z: 80, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -108,18 +108,48 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tileset2_parte_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc86e3554ebdc6b4f918a4a8d95d1349
+      internalID: -217018679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tileset2_parte_2_0: -217018679
+      tileset2_parte_2_1: -1992376947
+      tileset2_parte_2_2: -742885411
+      tileset2_parte_2_3: 575985104
+      tileset2_parte_2_4: -1494677008
+      tileset2_parte_2_5: -573841534
+      tileset2_parte_2_6: -533659096
+      tileset2_parte_2_7: -1827875988
+      tileset2_parte_2_8: 886270734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
