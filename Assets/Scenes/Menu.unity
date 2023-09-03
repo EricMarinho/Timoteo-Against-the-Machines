@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Elden Gear
+  m_text: Timoteo Against the Machines
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
   m_sharedMaterial: {fileID: -8523431296157302228, guid: 80f481a3b113d4d47b2b2f1878af4936, type: 2}
@@ -456,8 +456,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -537,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerPause: {fileID: 0}
   gameOverObject: {fileID: 0}
+  speedController: {fileID: 0}
 --- !u!4 &529849427
 Transform:
   m_ObjectHideFlags: 0
