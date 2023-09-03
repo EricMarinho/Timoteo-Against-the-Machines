@@ -16,6 +16,11 @@ namespace Hub {
         [SerializeField] private Color fullHealth;
         [SerializeField] private Color middleHealth;
         [SerializeField] private Color lowHealth;
+        [Header("Brain Configuration")]
+        [SerializeField] private Image brain;
+        [SerializeField] private Sprite fullBrain;
+        [SerializeField] private Sprite middleBrain;
+        [SerializeField] private Sprite lowBrain;
         private float health;
         private Slider slider;
 
@@ -38,17 +43,24 @@ namespace Hub {
             slider.wholeNumbers = true;
             slider.value = health;
             fill.color = fullHealth;
+            brain.sprite = fullBrain;
         }
 
         Color ChangeColor(float health) {
             var currentPercentage = (health*100) / maxHealth;
-            return currentPercentage >= 66f ? fullHealth : currentPercentage >= 33f ? middleHealth : lowHealth;
+            return currentPercentage >= 70f ? fullHealth : currentPercentage >= 66f ? middleHealth : lowHealth;
+        }
+
+        Sprite ChangeSpriteBran(float health) {
+            var currentPercentage = (health*100) / maxHealth;
+            return currentPercentage >= 66f ? fullBrain : currentPercentage >= 33f ? middleBrain : lowBrain;
         }
 
         public void HeathDamage(float damage) {
             health = Mathf.Clamp(health - damage, 0, maxHealth);
             slider.value = health;
             fill.color = ChangeColor(health);
+            brain.sprite = ChangeSpriteBran(health);
         }
     }
 }
