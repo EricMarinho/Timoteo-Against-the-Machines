@@ -1,6 +1,6 @@
 # Timoteo Against the Machines
 
-<img align="right" src="https://img.itch.zone/aW1nLzEzMzE1ODExLnBuZw==/315x250%23c/m%2Fvd9L.png" width= 220/>
+<img align="right" src="https://img.itch.zone/aW1hZ2UvMjI0NzA5OS8xNDYyMTk1Ni5wbmc=/original/ZDZ%2F3V.png" width= 220/>
 
 Help Timoteo on his rebellion against technology in this 2D game made on Unity!
 
